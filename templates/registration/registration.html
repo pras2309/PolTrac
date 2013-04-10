@@ -1,0 +1,30 @@
+<form action="/registration/" method="post">
+ {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.username.errors }}
+        <label for="id_subject">Username:</label>
+        {{ form.username }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.first_name.errors }}
+        <label for="id_message">First Name:</label>
+        {{ form.first_name }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.last_name.errors }}
+        <label for="id_sender">Last Name:</label>
+        {{ form.last_name }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.email.errors }}
+        <label for="id_cc_myself">Email Address: </label>
+        {{ form.email }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.date_of_birth.errors }}
+        <label for="id_cc_myself">Date Of Birth: </label>
+        {{ form.date_of_birth }}
+    </div>    
+    <p><input type="submit" value="Send message" /></p> 
+</form>
