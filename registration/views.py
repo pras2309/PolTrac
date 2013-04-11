@@ -14,7 +14,7 @@ def index(request):
             # Process the data in form.cleaned_data
             # ...
             post_data = request.POST
-            import ipdb;ipdb.set_trace()
+            #:import ipdb;ipdb.set_trace()
             rec = User(username=post_data["username"],
                                first_name=post_data["first_name"],
                                last_name=post_data['last_name'],
