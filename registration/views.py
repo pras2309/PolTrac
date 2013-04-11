@@ -33,9 +33,17 @@ def index(request):
 
 def list(request):
     records = User.objects.all()
+    #import ipdb;ipdb.set_trace()
     rec_count = User.objects.count()
 #     import ipdb;ipdb.set_trace()
     return render(request, 'registration/list.html', {
         'records': records,
         'rec_count': int(rec_count)
     })
+    
+def profile(request, id):
+    #import ipdb;ipdb.set_trace()
+    record = User.objects.get(id=id)
+    return render(request, 'registration/profile.html', {
+        'record': record,
+    })    

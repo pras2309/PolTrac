@@ -1,0 +1,30 @@
+
+{% extends "common/base.html" %}
+
+{% block title %} User Profile{% endblock %}
+{% block content %}
+<table>
+<tr>
+	<th align="left">Username</th>
+	<td>{{record.username}}</td>
+</tr>
+<tr>
+    <th  align="left">Name</th>
+    <td>{{record.first_name}} {{record.last_name}}</td>
+</tr>
+<tr>
+    <th  align="left">Email</th>
+    <td>{{record.email}}</td>
+</tr>
+<tr>
+    <th  align="left">Date Of Birth</th>
+    <td>{{record.date_of_birth}}</td>
+</tr>
+<tr>
+    <th  align="left">Sex</th>
+    <td>{{record.sex}}</td>
+</tr>
+
+
+</table>
+{% endblock %}
