@@ -4,6 +4,31 @@
 {% block title %} Registered Users{% endblock %}
 
 {% block content %}
-{{records}}
-{{rec_count}}
+<table>
+<tr>
+<th>Username</th>
+<th>Name</th>
+<th>Email</th>
+<th>DOB</th>
+<th>Sex</th>
+<th>&nbsp;</th>
+</tr>
+
+{% if rec_count > 0 %}
+{% for key in records %}
+<tr>
+<td>{{ key.username }}</td>
+<td>{{ key.first_name }} {{ key.last_name }}</td>
+<td>{{ key.email }}</td>
+<td>{{ key.date_of_birth }}</td>
+<td>{{ key.sex }}</td>
+<td><a href="#">View</a></td>
+</tr>
+
+
+{% endfor %}
+{% else %}
+No records found
+{% endif %}
+</table>
 {% endblock %}

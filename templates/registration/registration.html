@@ -27,9 +27,11 @@
         {{ form.email }}
     </div>
     <div class="fieldWrapper">
-        {{ form.date_of_birth.errors }}
+        {{ form.dob_dd.errors }}
+        {{ form.dob_mm.errors }}
+        {{ form.dob_yy.errors }}
         <label for="id_date_of_birth">Date Of Birth: </label>
-        {{ form.date_of_birth }}
+        DD {{ form.dob_dd }} MM {{ form.dob_mm }} YYYY {{ form.dob_yy }}
     </div>
     <div class="fieldWrapper">
         {{ form.sex.errors }}
