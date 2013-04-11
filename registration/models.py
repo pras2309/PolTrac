@@ -11,5 +11,6 @@ class Registration(models.Model):
     last_name = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     date_of_birth = models.CharField(max_length=200)
+    sex = models.CharField(max_length=200)
     
     

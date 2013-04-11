@@ -6,3 +6,4 @@ class RegistrationForm(forms.Form):
     last_name = forms.CharField(max_length=200)
     email = forms.CharField(max_length=200)
     date_of_birth = forms.CharField(max_length=200)
+    sex = forms.CharField(max_length=200)
