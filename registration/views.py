@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from registration.models import Registration
+from registration.models import User
 
 from registration.registration_form import RegistrationForm 
 
@@ -13,14 +13,16 @@ def index(request):
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             # ...
-            rec = Registration(username='username',
-                               first_name='first_name',
-                               last_name='last_name',
-                               email='email@email.com',
-                               date_of_birth='23/09/1981',
-                               sex='male')
+            post_data = request.POST
+            import ipdb;ipdb.set_trace()
+            rec = User(username=post_data["username"],
+                               first_name=post_data["first_name"],
+                               last_name=post_data['last_name'],
+                               email=post_data['email'],
+                               date_of_birth=post_data['dob_dd']+'/'+post_data['dob_mm']+'/'+post_data['dob_yy'],
+                               sex=post_data['sex'])
             rec.save()
-            return HttpResponseRedirect('/thanks/') # Redirect after POST
+            return HttpResponseRedirect('/registration/list/') # Redirect after POST
     else:
         form = RegistrationForm() # An unbound form
 
@@ -30,9 +32,10 @@ def index(request):
     
 
 def list(request):
-    records = Registration.objects.all()
-    rec_count = Registration.objects.count()
+    records = User.objects.all()
+    rec_count = User.objects.count()
+#     import ipdb;ipdb.set_trace()
     return render(request, 'registration/list.html', {
         'records': records,
-        'rec_count':rec_count
+        'rec_count': int(rec_count)
     })
