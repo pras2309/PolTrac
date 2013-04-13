@@ -7,7 +7,11 @@ from registration.models import User
 
 from registration.registration_form import RegistrationForm 
 
-def index(request):
+
+def home(request):
+    return render(request, 'registration/home.html')  
+    
+def register(request):
     if request.method == 'POST': # If the form has been submitted...
         form = RegistrationForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass

@@ -1,22 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load staticfiles %}
+
+<!DOCTYPE html >
+<html>
 <head>
-    <link rel="stylesheet" href="style.css" />
-    <title>{% block title %}My amazing site{% endblock %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}PolTrac{% endblock %}</title>
+<link rel="stylesheet" href="{% static  "/static/css/bootstrap.css" %}" type="text/css" />
+<link rel="stylesheet" href="{% static  "/static/css/custom.css" %}" type="text/css" />
+<link rel="stylesheet" href="{% static  "/static/css/bootstrap-responsive.css" %}" />
 </head>
 
 <body>
-    <div id="topnav">
-        {% block topnav %}
-        <ul>
-            <li><a href="#">Chipoli</a></li>
-            <li><a href="#">Counties</a></li>
-        </ul>
-        {% endblock %}
-    </div>
+<div class="container" >
+{% include "common/header.html" %}
 
-    <div id="content">
-        {% block content %}{% endblock %}
-    </div>
+    <content class="row-fluid">
+
+        <!-- <section class="well span3">
+            <nav>
+                <ul class="nav">
+                    <li><span class="icon-arrow-right pull-left"></span><a href="index.html">&nbsp;User List</a></li>
+                    <li><span class="icon-arrow-right pull-left"></span><a href="create_user.html">&nbsp;Create New User</a></li>
+                </ul>
+            </nav>
+        </section>
+         -->
+        <section class="well span12 transparentBG">
+            {% block content %}
+    
+    {% endblock %}
+            <!-- <fieldset>
+                <legend>User Listing</legend>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ravi.raikwar</td>
+                            <td>Ravi</td>
+                            <td>Raikwar</td>
+                            <td>ravi.raikwar@3pillarglobal.com</td>
+                            <td><a href="edit_user.html"><span class="icon-edit" title="Edit" alt="Edit"></span></a> / <a href="javascript:void(0);"><span class="icon-remove" title="Delete" alt="Delete"></span></a></td>
+                        </tr>
+                        <tr>
+                            <td>harsh.lamba</td>
+                            <td>Harsh</td>
+                            <td>Lamba</td>
+                            <td>harsh.lamba@3pillarglobal.com</td>
+                            <td><a href="edit_user.html"><span class="icon-edit" title="Edit" alt="Edit"></span></a> / <a href="javascript:void(0);"><span class="icon-remove" title="Delete" alt="Delete"></span></a></td>
+                        </tr>
+                        <tr>
+                            <td>prashant.agarwal</td>
+                            <td>Prashant</td>
+                            <td>Agarwal</td>
+                            <td>prashant.agarwal@3pillarglobal.com</td>
+                            <td><a href="edit_user.html"><span class="icon-edit" title="Edit" alt="Edit"></span></a> / <a href="javascript:void(0);"><span class="icon-remove" title="Delete" alt="Delete"></span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <h4>Div Structure View</h4>
+                <hr />
+                <div class="row-fluid border-botm">
+                    <div class="span3"><strong>Username</strong></div>
+                    <div class="span2"><strong>First Name</strong></div>
+                    <div class="span2"><strong>Last Name</strong></div>
+                    <div class="span4"><strong>Email</strong></div>
+                    <div class="span1 text-center"><strong>Action</strong></div>
+                </div>
+                <div class="row-fluid border-botm">
+                    <div class="span3">ravi.raikwar</div>
+                    <div class="span2">Ravi</div>
+                    <div class="span2">Raikwar</div>
+                    <div class="span4">ravi.raikwar@3pillarglobal.com</div>
+                    <div class="span1 text-center"><a href="edit_user.html"><span class="icon-edit" title="Edit" alt="Edit"></span></a> / <a href="javascript:void(0);"><span class="icon-remove" title="Delete" alt="Delete"></span></a></div>
+                </div>
+                <div class="row-fluid border-botm">
+                    <div class="span3">harsh.lamba</div>
+                    <div class="span2">Harsh</div>
+                    <div class="span2">Lamba</div>
+                    <div class="span4">harsh.lamba@3pillarglobal.com</div>
+                    <div class="span1 text-center"><a href="edit_user.html"><span class="icon-edit" title="Edit" alt="Edit"></span></a> / <a href="javascript:void(0);"><span class="icon-remove" title="Delete" alt="Delete"></span></a></div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">prashant.agarwal</div>
+                    <div class="span2">Prashant</div>
+                    <div class="span2">Agarwal</div>
+                    <div class="span4">prashant.agarwal@3pillarglobal.com</div>
+                    <div class="span1 text-center"><a href="edit_user.html"><span class="icon-edit" title="Edit" alt="Edit"></span></a> / <a href="javascript:void(0);"><span class="icon-remove" title="Delete" alt="Delete"></span></a></div>
+                </div>
+            </fieldset> -->
+        </section>
+    </content>
+    
+    {% include "common/footer.html" %}
+    
+    <!-- <footer class="row-fluid">
+        <section class="well">
+            <h4 class="text-center">Footer</h4>
+        </section>
+    </footer> -->
+    <!---->
+</div>
+<script src="{% static  "/static/js/bootstrap.min.js" %}"></script>
 </body>
 </html>
